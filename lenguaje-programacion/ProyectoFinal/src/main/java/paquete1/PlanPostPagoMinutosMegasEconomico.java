@@ -52,7 +52,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular
 
     public void calcularPagoMensual() {
         pagoMensual = ((minutos * costoMinutos) + (gigas * costoGigas)
-                * porcentajeDescuento);
+                * (porcentajeDescuento/100));
     }
 
     public double obtenerMinutos() {
