@@ -43,7 +43,7 @@ public class LecturaArchivoSecuencial {
         nombreArchivo = n;
     }
 
-    public void establecerListaPlanes() {
+    public void establecerPlanCelular() {
         // 
         planes = new ArrayList<>();
         File f = new File(obtenerNombreArchivo());
@@ -68,7 +68,7 @@ public class LecturaArchivoSecuencial {
 
     }
 
-    public ArrayList<PlanCelular> obtenerListaPlanes() {
+    public ArrayList<PlanCelular> obtenerPlanCelular() {
         return planes;
     }
 
@@ -80,8 +80,8 @@ public class LecturaArchivoSecuencial {
     public String toString() {
         
         String cadena = "Lista de Planes\n";
-        for (int i = 0; i < obtenerListaPlanes().size(); i++) {
-            PlanCelular p = obtenerListaPlanes().get(i);
+        for (int i = 0; i < obtenerPlanCelular().size(); i++) {
+            PlanCelular p = obtenerPlanCelular().get(i);
             cadena = String.format("%s%d) (%s) - %s\n", cadena, 
                     i+1, p.getClass().getSimpleName(), p);
         }

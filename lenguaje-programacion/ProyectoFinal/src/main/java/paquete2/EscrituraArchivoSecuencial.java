@@ -68,8 +68,8 @@ public class EscrituraArchivoSecuencial {
     public void establecerLista() {
         LecturaArchivoSecuencial l = 
                 new LecturaArchivoSecuencial(obtenerNombreArchivo());
-        l.establecerListaPlanes();
-        lista = l.obtenerListaPlanes();
+        l.establecerPlanCelular();
+        lista = l.obtenerPlanCelular();
     }
 
     public String obtenerNombreArchivo(){

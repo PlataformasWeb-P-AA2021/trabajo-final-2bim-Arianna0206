@@ -33,13 +33,13 @@ public class Ejecutor {
         String marcaCelular = "";
         String modeloCelular = "";
         int numeroCelular = 0;
-        int bandera = 0;
-        while (bandera != 5) {
+        int var = 0;
+        while (var != 5) {
             System.out.println("Ingrese el plan que desea.\n1. Plan postPago minutos\n"
                     + "2. Plan postPago megas\n3. Plan postPago minutos megas\n"
                     + "4. Plan postPago minutos megas economico\n5. Salir");
-            bandera = entrada.nextInt();
-            if (bandera >= 1 && bandera <= 4) {
+            var = entrada.nextInt();
+            if (var >= 1 && var <= 4) {
                 entrada.nextLine();
                 System.out.println("Ingrese los nombres del cliente");
                 nombre = entrada.nextLine();
@@ -57,7 +57,7 @@ public class Ejecutor {
                 numeroCelular = entrada.nextInt();
             }
 
-            switch (bandera) {
+            switch (var) {
                 case 1:
                     PlanPostPagoMinutos(plan, nombre, apellidos, identificacion,
                             ciudad, marcaCelular, modeloCelular, numeroCelular);
@@ -81,7 +81,7 @@ public class Ejecutor {
                     break;
 
                 case 5:
-                    bandera = 5;
+                    var = 5;
                     break;
             }
         }
@@ -97,7 +97,7 @@ public class Ejecutor {
         archivo.cerrarArchivo();
 
         LecturaArchivoSecuencial lectura = new LecturaArchivoSecuencial(n);
-        lectura.establecerListaPlanes();
+        lectura.establecerPlanCelular();
 
         System.out.println(lectura);
         lectura.cerrarArchivo();
@@ -109,6 +109,7 @@ public class Ejecutor {
             String ciudad, String marcaCelular, String modeloCelular,
             int numeroCelular) {
         Scanner entrada = new Scanner(System.in);
+        
         Persona p = new Persona(nombre, apellidos, identificacion, ciudad);
 
         System.out.println("Ingrese los minutos nacionales");
